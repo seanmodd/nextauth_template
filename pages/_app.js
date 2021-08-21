@@ -41,10 +41,10 @@ function MyApp({ Component, pageProps, router }) {
               exit: { opacity: 0, y: 10 },
             }}
           >
-            <Provider session={pageProps.sesson}>
-              <Navbar />
-              <Component {...pageProps} />
-            </Provider>
+            {/* <Provider session={pageProps.sesson}> */}
+            <Navbar />
+            <Component {...pageProps} />
+            {/* </Provider> */}
           </MotionBox>
         </AnimatePresence>
       </GlobalStyle>
