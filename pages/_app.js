@@ -23,31 +23,31 @@ const MotionBox = motion(Box);
 function MyApp({ Component, pageProps, router }) {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <DefaultSeo {...SEO} />
+      <Provider session={pageProps.sesson}>
+        <DefaultSeo {...SEO} />
 
-      <GlobalStyle>
-        <Star />
-        <AnimatePresence exitBeforeEnter>
-          <MotionBox
-            key={router.route}
-            animate="enter"
-            as="main"
-            exit="exit"
-            flexGrow={1}
-            initial="initial"
-            variants={{
-              initial: { opacity: 0, y: -10 },
-              enter: { opacity: 1, y: 0 },
-              exit: { opacity: 0, y: 10 },
-            }}
-          >
-            {/* <Provider session={pageProps.sesson}> */}
-            <Navbar />
-            <Component {...pageProps} />
-            {/* </Provider> */}
-          </MotionBox>
-        </AnimatePresence>
-      </GlobalStyle>
+        <GlobalStyle>
+          <Star />
+          <AnimatePresence exitBeforeEnter>
+            <MotionBox
+              key={router.route}
+              animate="enter"
+              as="main"
+              exit="exit"
+              flexGrow={1}
+              initial="initial"
+              variants={{
+                initial: { opacity: 0, y: -10 },
+                enter: { opacity: 1, y: 0 },
+                exit: { opacity: 0, y: 10 },
+              }}
+            >
+              <Navbar />
+              <Component {...pageProps} />
+            </MotionBox>
+          </AnimatePresence>
+        </GlobalStyle>
+      </Provider>
     </ChakraProvider>
   );
 }
