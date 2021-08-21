@@ -1,4 +1,22 @@
-  
+
+.title {
+  color: #047ff3;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  font-size: inherit;
+  letter-spacing: 0px;
+}
+
+.title:hover {
+  color: #7304f3;
+  transition: all 0.2s ease-out;
+  text-decoration: underline;
+  letter-spacing: 6px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+
 ul {
   margin: 0;
   padding: 0;

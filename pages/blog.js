@@ -8,7 +8,7 @@ function Blog({ data }) {
 
   return (
     <VStack pt="100px">
-      <Heading>Blog page - {data}</Heading>
+      <Heading className="title">Blog page - {data}</Heading>
     </VStack>
   );
 }

@@ -21,11 +21,11 @@ function Dashboard() {
   }, []);
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <Heading className="title">Loading...</Heading>;
   }
   return (
     <VStack pt="100px">
-      <Heading>Here is a dashboard</Heading>
+      <Heading className="title">Here is a dashboard</Heading>
     </VStack>
   );
 }
