@@ -1,12 +1,16 @@
 import { getSession, useSession } from 'next-auth/client';
 
-const { Heading } = require('@chakra-ui/react');
+const { Heading, VStack } = require('@chakra-ui/react');
 
 function Blog({ data }) {
   const [session] = useSession();
   console.log({ session });
 
-  return <h1>Blog page - {data}</h1>;
+  return (
+    <VStack pt="100px">
+      <Heading>Blog page - {data}</Heading>
+    </VStack>
+  );
 }
 
 export default Blog;

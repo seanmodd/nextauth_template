@@ -15,6 +15,23 @@ a {
   text-decoration: none;
 }
 
+.mya {
+  color: #047ff3;
+  transition: all 0.2s ease-out;
+  font-size: inherit;
+}
+
+.mya:hover {
+  color: #04f354;
+  transition: all 0.2s ease-out;
+  text-decoration: underline;
+  font-size: 50px;
+}
+/* a:hover {
+  color: #ff0000;
+
+} */
+
 .logo {
   margin: 0;
   font-size: 1.45em;

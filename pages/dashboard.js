@@ -1,29 +1,33 @@
-const { Heading } = require('@chakra-ui/react')
+import { useState, useEffect } from 'react';
+import { getSession, signIn } from 'next-auth/client';
 
-import { useState, useEffect } from 'react'
-import { getSession, signIn } from 'next-auth/client'
+const { Heading, VStack } = require('@chakra-ui/react');
 
 function Dashboard() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const securePage = async () => {
-      const session = await getSession()
-      console.log({ session })
+      const session = await getSession();
+      console.log({ session });
       if (!session) {
-        signIn()
+        signIn();
       } else {
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
 
-    securePage()
-  }, [])
+    securePage();
+  }, []);
 
   if (loading) {
-    return <h2>Loading...</h2>
+    return <h2>Loading...</h2>;
   }
-  return <h1>Dashboard page</h1>
+  return (
+    <VStack pt="100px">
+      <Heading>Here is a dashboard</Heading>
+    </VStack>
+  );
 }
 
-export default Dashboard
+export default Dashboard;
