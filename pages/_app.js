@@ -25,11 +25,10 @@ function MyApp({ Component, pageProps, router }) {
     <ChakraProvider resetCSS theme={theme}>
       <Provider session={pageProps.sesson}>
         <DefaultSeo {...SEO} />
-
         <GlobalStyle>
           <Star />
           <AnimatePresence exitBeforeEnter>
-            <MotionBox
+            {/* <MotionBox
               key={router.route}
               animate="enter"
               as="main"
@@ -41,15 +40,46 @@ function MyApp({ Component, pageProps, router }) {
                 enter: { opacity: 1, y: 0 },
                 exit: { opacity: 0, y: 10 },
               }}
-            >
-              <Navbar />
-              <Component {...pageProps} />
-            </MotionBox>
+            > */}
+            <Navbar />
+            <Component {...pageProps} />
+            {/* </MotionBox> */}
           </AnimatePresence>
         </GlobalStyle>
       </Provider>
     </ChakraProvider>
   );
 }
+// function MyApp({ Component, pageProps, router }) {
+//   return (
+//     <ChakraProvider resetCSS theme={theme}>
+//       <Provider session={pageProps.sesson}>
+//         <DefaultSeo {...SEO} />
+
+//         <GlobalStyle>
+//           <Star />
+//           <AnimatePresence exitBeforeEnter>
+//             <MotionBox
+//               key={router.route}
+//               animate="enter"
+//               as="main"
+//               exit="exit"
+//               flexGrow={1}
+//               initial="initial"
+//               variants={{
+//                 initial: { opacity: 0, y: -10 },
+//                 enter: { opacity: 1, y: 0 },
+//                 exit: { opacity: 0, y: 10 },
+//               }}
+//             >
+//               <Navbar />
+//               <Component {...pageProps} />
+//             </MotionBox>
+//           </AnimatePresence>
+//         </GlobalStyle>
+//       </Provider>
+//     </ChakraProvider>
+//   );
+// }
 
 export default MyApp;
