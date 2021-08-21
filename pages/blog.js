@@ -1,17 +1,30 @@
+import { getSession, useSession } from 'next-auth/client';
+
 const { Heading } = require('@chakra-ui/react');
 
-function Blog() {
-  return (
-    <>
-      <Heading>This is the blog</Heading>
-    </>
-  );
+function Blog({ data }) {
+  const [session] = useSession();
+  console.log({ session });
+
+  return <h1>Blog page - {data}</h1>;
 }
 
 export default Blog;
 
-export const getServerSideProps = async (ctx) => ({
-  props: {
-    data: null,
-  },
-});
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/api/auth/signin?callbackUrl=http://localhost:3000/blog',
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: {
+      data: 'List of 100 personalized blogs',
+      session,
+    },
+  };
+}
