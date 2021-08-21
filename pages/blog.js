@@ -8,7 +8,11 @@ function Blog({ data }) {
 
   return (
     <VStack pt="100px">
-      <Heading className="title">Blog page - {data}</Heading>
+      <Heading className="title" py="20px">
+        Blog Page!
+      </Heading>
+      <Heading fontSize="2xl">{data}</Heading>
+      <Heading fontSize="2xl">Owner: {session.user.name}</Heading>
     </VStack>
   );
 }
@@ -27,7 +31,7 @@ export async function getServerSideProps(context) {
   }
   return {
     props: {
-      data: 'List of 100 personalized blogs',
+      data: 'List of 100 Blog Titles',
       session,
     },
   };
