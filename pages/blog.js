@@ -1,10 +1,32 @@
+import { useState, useEffect } from 'react';
 import { getSession, useSession } from 'next-auth/client';
 
 const { Heading, VStack } = require('@chakra-ui/react');
 
 function Blog({ data }) {
+  const [loading, setLoading] = useState(true);
   const [session] = useSession();
   console.log({ session });
+  useEffect(() => {
+    const securePage = async () => {
+      const session = await getSession();
+      console.log({ session });
+      if (!session) {
+        signIn();
+      } else {
+        setLoading(false);
+      }
+    };
+    securePage();
+  }, []);
+
+  if (loading) {
+    return (
+      <VStack pt="100px">
+        <Heading className="title">Loading...</Heading>
+      </VStack>
+    );
+  }
 
   return (
     <VStack pt="100px">

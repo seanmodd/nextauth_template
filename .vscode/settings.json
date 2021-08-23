@@ -6,5 +6,6 @@
     "activityBar.background": "#390E7F",
     "titleBar.activeBackground": "#4F14B1",
     "titleBar.activeForeground": "#FBFAFE"
-  }
+  },
+  "bloop.openOnSuggestionsAvailable": false
 }

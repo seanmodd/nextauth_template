@@ -17,7 +17,6 @@ function Dashboard() {
         setLoading(false);
       }
     };
-
     securePage();
   }, []);
 
@@ -58,43 +57,3 @@ export async function getServerSideProps(context) {
     },
   };
 }
-
-// import { getSession, useSession } from 'next-auth/client';
-
-// const { Heading, VStack } = require('@chakra-ui/react');
-
-// function Dashboard({ data }) {
-//   const [session] = useSession();
-//   console.log({ session });
-
-//   return (
-//     <VStack pt="100px">
-//       <Heading className="title" py="20px">
-//         Dashboard Page!
-//       </Heading>
-//       <Heading fontSize="2xl">{data}</Heading>
-//       <Heading fontSize="2xl">Owner: {session.user.name}</Heading>
-//     </VStack>
-//   );
-// }
-
-// export default Dashboard;
-
-// export async function getServerSideProps(context) {
-//   const session = await getSession(context);
-//   if (!session) {
-//     return {
-//       redirect: {
-//         destination:
-//           '/api/auth/signin?callbackUrl=http://localhost:3000/',
-//         permanent: false,
-//       },
-//     };
-//   }
-//   return {
-//     props: {
-//       data: 'Dashboard data goes here',
-//       session,
-//     },
-//   };
-// }
