@@ -27,8 +27,8 @@ function MyApp({ Component, pageProps, router }) {
         <DefaultSeo {...SEO} />
         <GlobalStyle>
           <Star />
-          <AnimatePresence exitBeforeEnter>
-            {/* <MotionBox
+          {/* <AnimatePresence exitBeforeEnter> */}
+          {/* <MotionBox
               key={router.route}
               animate="enter"
               as="main"
@@ -41,10 +41,10 @@ function MyApp({ Component, pageProps, router }) {
                 exit: { opacity: 0, y: 10 },
               }}
             > */}
-            <Navbar />
-            <Component {...pageProps} />
-            {/* </MotionBox> */}
-          </AnimatePresence>
+          <Navbar />
+          <Component {...pageProps} />
+          {/* </MotionBox> */}
+          {/* </AnimatePresence> */}
         </GlobalStyle>
       </Provider>
     </ChakraProvider>
