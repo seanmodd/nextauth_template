@@ -10,10 +10,13 @@
     "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.js --fix --ext js,jsx"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.4",
     "@chakra-ui/theme-tools": "^1.1.7",
     "@emotion/react": "11",
     "@emotion/styled": "11",
+    "@fontsource/inter": "^4.5.0",
+    "@fontsource/poppins": "^4.5.0",
     "framer-motion": "4",
     "next": "11.1.0",
     "next-auth": "^3.25.0",
@@ -24,7 +27,8 @@
     "react-hook-form": "^7.12.2",
     "react-icons": "^4.2.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.3"
+    "semantic-ui-react": "^2.0.3",
+    "typeface-poppins": "^1.1.13"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

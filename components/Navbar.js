@@ -5,11 +5,7 @@ function Navbar() {
   const [session, loading] = useSession();
   return (
     <nav className="header">
-      <h1 className="logo">
-        <a href="#">NextAuth</a>
-      </h1>
       <ul className={`main-nav ${!session && loading ? 'loading' : 'loaded'}`}>
-        {/* <ul className="main-nav"> */}
         <li>
           <Link href="/">
             <a>Home</a>

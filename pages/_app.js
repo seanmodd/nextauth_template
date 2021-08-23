@@ -2,13 +2,15 @@ import 'semantic-ui-css/semantic.min.css';
 import { DefaultSeo } from 'next-seo';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import SEO from 'next-seo.config';
-import theme from 'styles/theme';
+import { theme } from 'styles/theme';
 // import GlobalStyle from 'styles/styles';
 import 'styles/css/nprogress.css';
 import '../styles/Navbar.css';
 import Star from 'components/Star';
 import Navbar from 'components/Navbar';
 import { Provider } from 'next-auth/client';
+import DarkModeSwitch from 'components/DarkModeSwitch';
+import SeanNavbar from '../components/SeanNavbar';
 
 function MyApp({ Component, pageProps, router }) {
   return (
@@ -16,8 +18,11 @@ function MyApp({ Component, pageProps, router }) {
       <Provider session={pageProps.sesson}>
         <DefaultSeo {...SEO} />
         {/* <GlobalStyle> */}
-        <Star />
+        <DarkModeSwitch />
+        <SeanNavbar />
+
         <Navbar />
+
         <Component {...pageProps} />
         {/* </GlobalStyle> */}
       </Provider>

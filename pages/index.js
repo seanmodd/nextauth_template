@@ -1,7 +1,7 @@
 import PageContainer from 'components/PageContainer';
 import Form from 'components/Form';
 import { useSession } from 'next-auth/client';
-import { Heading, VStack } from '@chakra-ui/react';
+import { Button, Heading, VStack } from '@chakra-ui/react';
 
 export default function Home() {
   const [session, loading] = useSession();
@@ -15,6 +15,9 @@ export default function Home() {
           Next.js!
         </a>
       </Heading>
+      <Button>Test Button</Button>
+      <button>here is regular button</button>
+      
     </VStack>
   );
 }

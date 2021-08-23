@@ -52,7 +52,7 @@ a {
 
 .logo {
   margin: 0;
-  font-size: 1.45em;
+  font-size: 1.65em;
 }
 
 .main-nav {
@@ -65,13 +65,17 @@ a {
   padding: 10px 15px;
   text-transform: uppercase;
   text-align: center;
+  font-size: 55px;
   display: block;
 }
 
 .main-nav a {
-  color: #0080ff;
+  /* color: #0080ff; */
   font-size: 0.99em;
+  padding: 10px 15px;
+  margin: 10px 15px;
   font-weight: bold;
+  text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -82,13 +86,16 @@ a {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  height: 75px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4;
   -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75); */
 }
 
 .loading {
