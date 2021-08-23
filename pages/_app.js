@@ -10,7 +10,7 @@ import Star from 'components/Star';
 import Navbar from 'components/Navbar';
 import { Provider } from 'next-auth/client';
 import DarkModeSwitch from 'components/DarkModeSwitch';
-import SeanNavbar from '../components/SeanNavbar';
+import SeanNavbar, { MyTitle } from '../components/SeanNavbar';
 
 function MyApp({ Component, pageProps, router }) {
   return (
@@ -18,8 +18,8 @@ function MyApp({ Component, pageProps, router }) {
       <Provider session={pageProps.sesson}>
         <DefaultSeo {...SEO} />
         {/* <GlobalStyle> */}
-        <DarkModeSwitch />
-        <SeanNavbar />
+
+        <MyTitle />
 
         <Navbar />
 

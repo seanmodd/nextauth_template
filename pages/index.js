@@ -7,7 +7,7 @@ export default function Home() {
   const [session, loading] = useSession();
   console.log({ session, loading });
   return (
-    <VStack pt="100px">
+    <VStack pt="50px">
       {/* <Form /> */}
       <Heading>
         {session ? `${session.user.name}, ` : ''}Welcome to{' '}
@@ -17,7 +17,6 @@ export default function Home() {
       </Heading>
       <Button>Test Button</Button>
       <button>here is regular button</button>
-      
     </VStack>
   );
 }

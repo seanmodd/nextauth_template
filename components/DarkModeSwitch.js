@@ -13,23 +13,31 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 const DarkModeSwitch = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const iconColor = {
-    light: '#fff',
+    light: '#1d1d1d',
     dark: '#ffe600',
   };
   const bgColor = {
     light: 'gray.300',
     dark: 'gray.900',
   };
+  const borderColor = {
+    light: 'gray.900',
+    dark: '#ffe600',
+  };
   return (
     <>
-      <HStack align="center" justify="flex" px={80}>
+      <HStack align="center" justify="flex">
         <IconButton
           aria-label="Toggle Dark Switch"
           icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
           onClick={toggleColorMode}
           color={iconColor[colorMode]}
           bg={bgColor[colorMode]}
-          borderColor="gray"
+          borderColor={borderColor[colorMode]}
+          _hover={{
+            bg: colorMode === 'dark' ? '#ffe600' : 'gray.900',
+            color: colorMode === 'dark' ? 'gray.900' : 'gray.50',
+          }}
         >
           {children}
         </IconButton>

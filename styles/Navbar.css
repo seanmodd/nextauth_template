@@ -66,6 +66,7 @@ a {
   text-transform: uppercase;
   text-align: center;
   font-size: 55px;
+  font-weight: bold;
   display: block;
 }
 
@@ -89,6 +90,7 @@ a {
   height: 75px;
   align-items: center;
   justify-content: center;
+  
   margin-top: 0.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
