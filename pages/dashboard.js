@@ -46,8 +46,7 @@ export async function getServerSideProps(context) {
   if (!session) {
     return {
       redirect: {
-        destination:
-          '/api/auth/signin?callbackUrl=http://localhost:3000/dashboard',
+        destination: '/api/auth/signin?callbackUrl=http://localhost:3000/',
         permanent: false,
       },
     };
@@ -87,7 +86,7 @@ export async function getServerSideProps(context) {
 //     return {
 //       redirect: {
 //         destination:
-//           '/api/auth/signin?callbackUrl=http://localhost:3000/dashboard',
+//           '/api/auth/signin?callbackUrl=http://localhost:3000/',
 //         permanent: false,
 //       },
 //     };
