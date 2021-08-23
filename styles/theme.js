@@ -30,10 +30,19 @@ export const theme = extendTheme({
       h1: {
         textShadow: '-1px 1px 1px #ff00007e',
         fontFamily: 'Poppins, sans-serif',
-        fontSize: '1.5rem',
+        fontSize: '4.5rem',
+        textAlign: 'center',
+        color: props.colorMode === 'dark' ? 'red.400' : '#ff00ea',
+        transition: 'all 0.5s ease-in-out',
         fontWeight: 'semibold',
+        letterSpacing: '-0.02em',
         lineHeight: '1.5',
         padding: '0 1rem',
+        textShadow:
+          props.colorMode === 'dark' ? '2px 1px red' : '0px 1px#0000006c',
+        _hover: {
+          letterSpacing: '0.05em',
+        },
       },
 
       body: {
@@ -69,37 +78,51 @@ export const theme = extendTheme({
         transition: 'all 1.0s ease-in-out',
       },
       a: {
-        color: props.colorMode === 'dark' ? 'gray.50' : 'blue.400',
-        fontWeight: '500',
+        color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
+        fontWeight: '200',
         transition: 'all 1.0s ease-in-out',
+        textTransform: 'uppercase',
+        textAlign: 'center',
         textDecoration: 'underline',
         _hover: {
           textShadow: '-1px 1px 5px #30303029',
-          color: props.colorMode === 'dark' ? 'blue.400' : 'green.300',
-          transition: 'all 0.2s ease-in-out',
+          color: props.colorMode === 'dark' ? 'blue.400' : '#ff00ea',
+          transition: 'all 0.5s ease-in-out',
         },
       },
       button: {
-        p: '5',
-        m: '5',
+        px: '4',
+        py: '3',
+        m: '2',
+        textAlign: 'center',
         // bg: 'gray.700',
         // color: 'blue.50',
-        bg: props.colorMode === 'dark' ? 'blue.500' : 'gray.100',
-        boxShadow: 'base',
-        color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
+        bg: props.colorMode === 'dark' ? '#e7e7e7' : 'blue.400',
+        // boxShadow: '3px 3px 2px 1px rgba(0, 0, 255, .2);',
+        boxShadow:
+          props.colorMode === 'dark'
+            ? '1px 1px 1px 1px #aaaaaa47;'
+            : '1px 1px 1px 1px #0000ff0;',
+        color: props.colorMode === 'dark' ? 'blue.500' : 'gray.50',
         fontWeight: 'semibold',
-        textShadow: '0.5px 0.5px 0.2px #ff00007e',
+        // textShadow: '1px 1px 0.2px rgba(0, 0, 255, .2);',
         // borderWidth: '1px',
-        borderRadius: '7.5px',
+        borderRadius: '10px',
         transition: 'all 0.5s ease-in-out',
-        borderColor: 'gray.700',
+        // borderColor: 'gray.700',
         _hover: {
           // borderColor: '#0022e4',
           // bg: 'purple.400',
           transition: 'all 0.5s ease-in-out',
-          color: '#0022e4',
-          textShadow: '0 3px 0 #a0a0a07e',
-          borderRadius: '7.5px',
+          color: props.colorMode === 'dark' ? 'blue.500' : 'gray.50',
+          fontSize: '18px',
+          // boxShadow:
+          //   props.colorMode === 'dark'
+          //     ? '2px 2px 2px 1px #aaaaaaca;'
+          //     : '3px 3px 2px 1px rgba(0, 0, 255, .2);',
+
+          // textShadow: '0 3px 0 #a0a0a07e',
+          // borderRadius: '7.5px',
           // borderColor: '#0022e4',
         },
         transition: 'all 0.5s ease-in-out',
@@ -118,11 +141,11 @@ export const theme = extendTheme({
     Button: {
       baseStyle: {
         fontWeight: 'normal',
-        borderColor: '#ff0000',
+        // borderColor: '#ff0000',
         bg: 'gray.50',
         textShadow: '0 3px 0 #a0a0a07e',
-        borderWidth: '2px',
-        borderRadius: '15px',
+        // borderWidth: '2px',
+        // borderRadius: '15px',
       },
       sizes: {
         xl: {
@@ -157,12 +180,12 @@ export const theme = extendTheme({
           // boxShadow: '0 0 2px 2px #efdfde',
         },
         solid: (props) => ({
-          bg: props.colorMode === 'dark' ? 'blue.300' : 'red.50',
-          color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
+          bg: props.colorMode === 'dark' ? 'blue.500' : 'red.500',
+          // color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
           _hover: {
-            // bg: 'gray.50',
+            bg: props.colorMode === 'dark' ? 'blue.500' : 'red.500',
             textShadow: '0 3px 0 #a0a0a07e',
-            borderRadius: '15px',
+            // borderRadius: '15px',
           },
         }),
       },

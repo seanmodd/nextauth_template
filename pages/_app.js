@@ -1,6 +1,13 @@
 import 'semantic-ui-css/semantic.min.css';
 import { DefaultSeo } from 'next-seo';
-import { Box, ChakraProvider } from '@chakra-ui/react';
+import {
+  Box,
+  ChakraProvider,
+  Grid,
+  SimpleGrid,
+  GridItem,
+  Heading,
+} from '@chakra-ui/react';
 import SEO from 'next-seo.config';
 import { theme } from 'styles/theme';
 // import GlobalStyle from 'styles/styles';

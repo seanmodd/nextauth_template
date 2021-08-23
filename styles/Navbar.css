@@ -40,7 +40,7 @@ a {
 }
 
 .mya:hover {
-  color: #04f354;
+  color: #000000;
   transition: all 0.2s ease-out;
   text-decoration: underline;
   font-size: 50px;
@@ -56,13 +56,13 @@ a {
 }
 
 .main-nav {
-  display: flex;
+  /* display: flex; */
   margin-top: 5px;
 }
 
 .logo a,
 .main-nav a {
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
   text-transform: uppercase;
   text-align: center;
   font-size: 55px;
@@ -71,10 +71,11 @@ a {
 }
 
 .main-nav a {
-  /* color: #0080ff; */
+  color: #0080ff;
   font-size: 0.99em;
-  padding: 10px 15px;
-  margin: 10px 15px;
+  display: flexbox;
+  /* padding: 10px 15px; */
+  /* margin: 10px 15px; */
   font-weight: bold;
   text-decoration: none;
   transition: all 0.3s ease-in-out;

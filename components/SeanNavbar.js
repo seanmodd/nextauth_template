@@ -34,10 +34,14 @@ const SeanNavbar = () => {
     light: 'gray.300',
     dark: 'gray.900',
   };
+  const bgColorItem = {
+    light: 'gray.100',
+    dark: 'gray.900',
+  };
   return (
     <>
-      <Box pt="0px" pl="40px" mt="10px">
-        <Menu>
+      <Box>
+        <Menu placement="right">
           <MenuButton
             as={IconButton}
             transition="all 0.5s ease-in-out"
@@ -47,24 +51,25 @@ const SeanNavbar = () => {
               transition: 'all 0.5s ease-in-out',
             }}
             _active={{
-              bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
-              color: colorMode === 'dark' ? 'gray.900' : 'gray.50',
+              bg: colorMode === 'dark' ? '#d400ff' : 'gray.200',
+              color: colorMode === 'dark' ? 'gray.900' : 'gray.900',
               transition: 'all 0.5s ease-in-out',
             }}
-            boxShadow="md"
+            // boxShadow="md"
             color={iconColor[colorMode]}
             bg={menuBgColor[colorMode]}
-            borderColor={iconColor[colorMode]}
+            // borderColor={iconColor[colorMode]}
             h="50px"
             w="60px"
             fontSize="28px"
             icon={<DragHandleIcon />}
           />
           <MenuList bg={bgColor[colorMode]} w="250px">
-            <Box w="200px">
+            <Box w="125px">
               <MenuGroup color={textColor[colorMode]} title="Profile">
                 <MenuItem
                   color={textColor[colorMode]}
+                  bg={bgColorItem[colorMode]}
                   _focus={{
                     bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
                     color: colorMode === 'dark' ? 'white' : '#d400ff',
@@ -80,6 +85,7 @@ const SeanNavbar = () => {
                 </MenuItem>
                 <MenuItem
                   color={textColor[colorMode]}
+                  bg={bgColorItem[colorMode]}
                   _focus={{
                     bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
                     color: colorMode === 'dark' ? 'white' : '#d400ff',
@@ -98,6 +104,7 @@ const SeanNavbar = () => {
               <MenuGroup color={textColor[colorMode]} title="Help">
                 <MenuItem
                   color={textColor[colorMode]}
+                  bg={bgColorItem[colorMode]}
                   _focus={{
                     bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
                     color: colorMode === 'dark' ? 'white' : '#d400ff',
@@ -113,6 +120,7 @@ const SeanNavbar = () => {
                 </MenuItem>
                 <MenuItem
                   color={textColor[colorMode]}
+                  bg={bgColorItem[colorMode]}
                   _focus={{
                     bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
                     color: colorMode === 'dark' ? 'white' : '#d400ff',
@@ -139,8 +147,9 @@ export default SeanNavbar;
 
 export const MyTitle = ({ children }) => (
   <Box py="20px">
-    <h1 className="logo">
-      <a href="#">NextAuth</a>
+    <h1 className="logos">
+      {/* <a href="#">NextAuth</a> */}
+      NextAuth
     </h1>
   </Box>
 );

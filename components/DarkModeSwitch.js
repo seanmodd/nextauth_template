@@ -26,7 +26,7 @@ const DarkModeSwitch = ({ children }) => {
   };
   return (
     <>
-      <HStack align="center" justify="flex">
+      <HStack align="center" justify="center">
         <IconButton
           aria-label="Toggle Dark Switch"
           icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
