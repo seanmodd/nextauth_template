@@ -18,8 +18,13 @@
 // });
 
 // export default theme;
-
-import { extendTheme, useColorMode } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
+import {
+  extendTheme,
+  useColorMode,
+  Box,
+  useStyleConfig,
+} from '@chakra-ui/react';
 // import 'typeface-poppins';
 import '@fontsource/inter';
 import '@fontsource/poppins';
@@ -33,7 +38,7 @@ export const theme = extendTheme({
         fontSize: '4.5rem',
         textAlign: 'center',
         color: props.colorMode === 'dark' ? 'red.400' : '#ff00ea',
-        transition: 'all 0.5s ease-in-out',
+        transition: 'all 0.1s ease-in-out',
         fontWeight: 'semibold',
         letterSpacing: '-0.02em',
         lineHeight: '1.5',
@@ -48,7 +53,7 @@ export const theme = extendTheme({
       body: {
         color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
         backgroundColor: props.colorMode === 'dark' ? 'gray.900' : 'gray.100',
-        transition: 'all 1.0s ease-in-out',
+        transition: 'all 0.1s ease-in-out',
       },
       input: {
         backgroundColor: props.colorMode === 'dark' ? 'gray.900' : 'gray.100',
@@ -59,7 +64,7 @@ export const theme = extendTheme({
           props.colorMode === 'dark'
             ? '0.1px solid #88888886'
             : '0.1px solid #f0121285',
-        transition: 'all 1.0s ease-in-out',
+        transition: 'all 0.1s ease-in-out',
         borderRadius: '5px',
         _hover: {
           transition: 'ease-in-out, width .35s ease-in-out',
@@ -70,23 +75,24 @@ export const theme = extendTheme({
               : '0 0 2px 4px #dee4ef',
         },
         _focus: {
-          transition: 'ease-in-out, width .35s ease-in-out',
+          transition: 'all 0.1s ease-in-out',
         },
       },
       div: {
         backgroundColor: props.colorMode === 'dark' ? 'gray.900' : 'gray.100',
-        transition: 'all 1.0s ease-in-out',
+        transition: 'all 0.1s ease-in-out',
       },
       a: {
         color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
         fontWeight: '200',
-        transition: 'all 1.0s ease-in-out',
+        transition: 'all 0.5s ease-in-out',
         textTransform: 'uppercase',
         textAlign: 'center',
+        color: props.colorMode === 'dark' ? 'blue.400' : '#ff00ea',
         textDecoration: 'underline',
         _hover: {
           textShadow: '-1px 1px 5px #30303029',
-          color: props.colorMode === 'dark' ? 'blue.400' : '#ff00ea',
+          color: props.colorMode === 'dark' ? '#ff00ea' : 'blue.400',
           transition: 'all 0.5s ease-in-out',
         },
       },
@@ -97,14 +103,14 @@ export const theme = extendTheme({
         textAlign: 'center',
         // bg: 'gray.700',
         // color: 'blue.50',
-        bg: props.colorMode === 'dark' ? '#e7e7e7' : 'blue.400',
+        bg: props.colorMode === 'dark' ? 'gray.300' : 'gray.300',
         // boxShadow: '3px 3px 2px 1px rgba(0, 0, 255, .2);',
         boxShadow:
           props.colorMode === 'dark'
             ? '1px 1px 1px 1px #aaaaaa47;'
             : '1px 1px 1px 1px #0000ff0;',
-        color: props.colorMode === 'dark' ? 'blue.500' : 'gray.50',
-        fontWeight: 'semibold',
+        color: props.colorMode === 'dark' ? '#6f00ff' : '#6f00ff',
+        fontWeight: 'normal',
         // textShadow: '1px 1px 0.2px rgba(0, 0, 255, .2);',
         // borderWidth: '1px',
         borderRadius: '10px',
@@ -114,7 +120,8 @@ export const theme = extendTheme({
           // borderColor: '#0022e4',
           // bg: 'purple.400',
           transition: 'all 0.5s ease-in-out',
-          color: props.colorMode === 'dark' ? 'blue.500' : 'gray.50',
+          color: props.colorMode === 'dark' ? '#ff00ea' : '#ff00ea',
+          fontWeight: 'bold',
           fontSize: '18px',
           // boxShadow:
           //   props.colorMode === 'dark'
@@ -136,8 +143,41 @@ export const theme = extendTheme({
         fontWeight: 'bold',
         lineHeight: '1.5',
         fontFamily: 'Poppins, sans-serif',
+        // color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
+      },
+      variants: {
+        'with-shadow': {
+          // bg: 'red.400',
+          // boxShadow: '0 0 2px 2px #efdfde',
+        },
+        solid: (props) => ({
+          bg: mode('blue.500', 'red.500')(props),
+          // bg: 'gray.300',
+          color: props.colorMode === 'dark' ? 'red.500' : 'blue.800',
+          _hover: {
+            bg: props.colorMode === 'dark' ? 'blue.500' : 'red.500',
+            bg: 'gray.300',
+            textShadow: '0 3px 0 #a0a0a07e',
+            // borderRadius: '15px',
+          },
+        }),
       },
     },
+    Drawer: {
+      // setup light/dark mode component defaults
+      baseStyle: (props) => ({
+        dialog: {
+          bg: mode('red.500', 'blue.500')(props),
+        },
+      }),
+    },
+    // Text: {
+    //   // setup light/dark mode component defaults
+    //   baseStyle: (props) => ({
+    //     bg: mode('red.500', 'blue.500')(props),
+    //   }),
+    // },
+
     Button: {
       baseStyle: {
         fontWeight: 'normal',
@@ -180,10 +220,12 @@ export const theme = extendTheme({
           // boxShadow: '0 0 2px 2px #efdfde',
         },
         solid: (props) => ({
-          bg: props.colorMode === 'dark' ? 'blue.500' : 'red.500',
+          // bg: props.colorMode === 'dark' ? 'blue.500' : 'red.500',
+          bg: 'gray.300',
           // color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
           _hover: {
-            bg: props.colorMode === 'dark' ? 'blue.500' : 'red.500',
+            // bg: props.colorMode === 'dark' ? 'blue.500' : 'red.500',
+            bg: 'gray.300',
             textShadow: '0 3px 0 #a0a0a07e',
             // borderRadius: '15px',
           },

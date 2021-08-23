@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   GridItem,
   Heading,
+
 } from '@chakra-ui/react';
 import SEO from 'next-seo.config';
 import { theme } from 'styles/theme';
@@ -22,17 +23,17 @@ import SeanNavbar, { MyTitle } from '../components/SeanNavbar';
 function MyApp({ Component, pageProps, router }) {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <Provider session={pageProps.sesson}>
-        <DefaultSeo {...SEO} />
-        {/* <GlobalStyle> */}
+        <Provider session={pageProps.sesson}>
+          <DefaultSeo {...SEO} />
+          {/* <GlobalStyle> */}
+          <DarkModeSwitch />
+          <MyTitle />
 
-        <MyTitle />
+          <Navbar />
 
-        <Navbar />
-
-        <Component {...pageProps} />
-        {/* </GlobalStyle> */}
-      </Provider>
+          <Component {...pageProps} />
+          {/* </GlobalStyle> */}
+        </Provider>
     </ChakraProvider>
   );
 }

@@ -6,12 +6,14 @@ import DarkModeSwitch from './DarkModeSwitch';
 
 function Navbar() {
   const [session, loading] = useSession();
+  console.log(
+    `Here is the session: ${session} Here is the loading: ${loading}`
+  );
   return (
     <>
       {/* <nav className="header"> */}
 
       <nav className="main-nav">
-      
         <SimpleGrid px="200px" minChildWidth="120px" spacing="40px">
           <Box>
             <DarkModeSwitch />

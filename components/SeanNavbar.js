@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { DragHandleIcon } from '@chakra-ui/icons';
 import { signIn, signOut, useSession } from 'next-auth/client';
+import Link from 'next/link';
 import { MyButton } from '../styles/theme';
 import Star from './Star';
 
@@ -65,7 +66,7 @@ const SeanNavbar = () => {
             icon={<DragHandleIcon />}
           />
           <MenuList bg={bgColor[colorMode]} w="250px">
-            <Box w="125px">
+            <Box w="150px">
               <MenuGroup color={textColor[colorMode]} title="Profile">
                 <MenuItem
                   color={textColor[colorMode]}
@@ -81,7 +82,9 @@ const SeanNavbar = () => {
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  My Account
+                  <Link href="/myaccount">
+                    <a>My Account</a>
+                  </Link>
                 </MenuItem>
                 <MenuItem
                   color={textColor[colorMode]}

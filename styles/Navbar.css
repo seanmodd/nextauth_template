@@ -22,7 +22,7 @@ ul {
   padding: 0;
   list-style: none;
 }
-
+/* 
 h2,
 h3,
 a {
@@ -31,9 +31,9 @@ a {
 
 a {
   text-decoration: none;
-}
+} */
 
-.mya {
+/* .mya {
   color: #047ff3;
   transition: all 0.2s ease-out;
   font-size: inherit;
@@ -44,7 +44,7 @@ a {
   transition: all 0.2s ease-out;
   text-decoration: underline;
   font-size: 50px;
-}
+} */
 /* a:hover {
   color: #ff0000;
 
