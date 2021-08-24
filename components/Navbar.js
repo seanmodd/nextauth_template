@@ -3,6 +3,7 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 import { SimpleGrid, Box, Heading, GridItem } from '@chakra-ui/react';
 import SeanNavbar from './SeanNavbar';
 import DarkModeSwitch from './DarkModeSwitch';
+import LearningNavbar from './LearningNavbar';
 
 function Navbar() {
   const [session, loading] = useSession();
@@ -18,22 +19,22 @@ function Navbar() {
           <Box>
             <DarkModeSwitch />
           </Box>
-          <Box h="10px">
+          <Box h="5px">
             <Link href="/">
               <a>Home</a>
             </Link>
           </Box>
-          <Box h="10px">
+          <Box h="5px">
             <Link href="/dashboard">
               <a>Dashboard</a>
             </Link>
           </Box>
-          <Box h="10px">
+          <Box h="5px">
             <Link href="/blog">
               <a>Blog</a>
             </Link>
           </Box>
-          <Box h="10px">
+          <Box h="5px">
             {!loading && !session && (
               <Link href="/api/auth/signin">
                 <a
@@ -62,6 +63,7 @@ function Navbar() {
 
           <SeanNavbar />
         </SimpleGrid>
+        <LearningNavbar />
       </nav>
     </>
   );

@@ -163,6 +163,32 @@ export const theme = extendTheme({
         }),
       },
     },
+    Text: {
+      baseStyle: {
+        fontSize: '1.5rem',
+        fontWeight: 'bold',
+        lineHeight: '1.5',
+        fontFamily: 'Poppins, sans-serif',
+        // color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
+      },
+      variants: {
+        'with-shadow': {
+          // bg: 'red.400',
+          // boxShadow: '0 0 2px 2px #efdfde',
+        },
+        solid: (props) => ({
+          bg: mode('blue.500', 'red.500')(props),
+          // bg: 'gray.300',
+          color: props.colorMode === 'dark' ? 'red.500' : 'blue.800',
+          _hover: {
+            bg: props.colorMode === 'dark' ? 'blue.500' : 'red.500',
+            bg: 'gray.300',
+            textShadow: '0 3px 0 #a0a0a07e',
+            // borderRadius: '15px',
+          },
+        }),
+      },
+    },
     Drawer: {
       // setup light/dark mode component defaults
       baseStyle: (props) => ({
