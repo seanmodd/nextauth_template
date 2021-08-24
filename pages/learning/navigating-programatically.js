@@ -5,7 +5,6 @@ import faker from 'faker';
 function App() {
   return (
     <VStack pt="100px">
-      
       <h1
         style={{
           fontSize: '40px',
