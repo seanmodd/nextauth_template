@@ -66,8 +66,13 @@ const SeanNavbar = () => {
             fontSize="28px"
             icon={<DragHandleIcon />}
           />
-          <MenuList bg={bgColor[colorMode]} w="250px">
-            <Box w="150px">
+          <MenuList
+            mt="52px"
+            justify="center"
+            bg={bgColor[colorMode]}
+            w="300px"
+          >
+            <Box pl="20px" justify="center" w="250px">
               <MenuGroup color={textColor[colorMode]} title="Profile">
                 <MenuItem
                   color={textColor[colorMode]}
@@ -107,7 +112,8 @@ const SeanNavbar = () => {
                 </MenuItem>
               </MenuGroup>
               <MenuDivider />
-              <MenuGroup color={textColor[colorMode]} title="Help">
+
+              <MenuGroup color={textColor[colorMode]} title="Routes">
                 <MenuItem
                   color={textColor[colorMode]}
                   // transition= 'all 0.5s ease-in-out'
@@ -123,7 +129,7 @@ const SeanNavbar = () => {
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  <a>Docs</a>
+                  <a href="/learning/product-list">Product List</a>
                 </MenuItem>
                 <MenuItem
                   color={textColor[colorMode]}
@@ -140,7 +146,43 @@ const SeanNavbar = () => {
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  <a>FAQ</a>
+                  <a href="/learning/nested-dynamic">Nested Dynamic</a>
+                </MenuItem>
+                <MenuItem
+                  color={textColor[colorMode]}
+                  // transition= 'all 0.5s ease-in-out'
+                  bg={bgColorItem[colorMode]}
+                  _focus={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#d400ff' : '#d400ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                  _hover={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#0077ff' : '#0077ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                >
+                  <a href="/learning/catch-all">Catch All</a>
+                </MenuItem>
+                <MenuItem
+                  color={textColor[colorMode]}
+                  // transition= 'all 0.5s ease-in-out'
+                  bg={bgColorItem[colorMode]}
+                  _focus={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#d400ff' : '#d400ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                  _hover={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#0077ff' : '#0077ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                >
+                  <a href="/learning/navigating-programatically">
+                    Programatic Nav
+                  </a>
                 </MenuItem>
               </MenuGroup>
             </Box>

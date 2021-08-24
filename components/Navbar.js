@@ -3,7 +3,6 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 import { SimpleGrid, Box, Heading, GridItem } from '@chakra-ui/react';
 import SeanNavbar from './SeanNavbar';
 import DarkModeSwitch from './DarkModeSwitch';
-import LearningNavbar from './LearningNavbar';
 
 function Navbar() {
   const [session, loading] = useSession();
@@ -12,10 +11,15 @@ function Navbar() {
   );
   return (
     <>
-      {/* <nav className="header"> */}
-
       <nav className="main-nav">
-        <SimpleGrid px="600px" pb="10px" minChildWidth="40px" spacing="20px">
+        <SimpleGrid
+          justifyContent="center"
+          alignItems="center"
+          px="300px"
+          pb="0px"
+          minChildWidth="160px"
+          spacing="0px"
+        >
           <Box h="45px">
             <Link href="/">
               <a>Home</a>
@@ -29,6 +33,11 @@ function Navbar() {
           <Box h="45px">
             <Link href="/blog">
               <a>Blog</a>
+            </Link>
+          </Box>
+          <Box h="45px">
+            <Link href="/learning">
+              <a>Example Page</a>
             </Link>
           </Box>
           <Box h="45px">
@@ -58,7 +67,6 @@ function Navbar() {
             )}
           </Box>
         </SimpleGrid>
-        <LearningNavbar />
       </nav>
     </>
   );
