@@ -129,7 +129,9 @@ const SeanNavbar = () => {
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  <a href="/learning/product-list">Product List</a>
+                  <Link href="/learning/product-list">
+                    <a>Product List</a>
+                  </Link>
                 </MenuItem>
                 <MenuItem
                   color={textColor[colorMode]}
@@ -146,7 +148,9 @@ const SeanNavbar = () => {
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  <a href="/learning/nested-dynamic">Nested Dynamic</a>
+                  <Link href="/learning/nested-dynamic">
+                    <a>Nested Dynamic</a>
+                  </Link>
                 </MenuItem>
                 <MenuItem
                   color={textColor[colorMode]}
@@ -163,7 +167,9 @@ const SeanNavbar = () => {
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  <a href="/learning/catch-all">Catch All</a>
+                  <Link href="/learning/catch-all">
+                    <a>Catch All</a>
+                  </Link>
                 </MenuItem>
                 <MenuItem
                   color={textColor[colorMode]}
@@ -180,9 +186,9 @@ const SeanNavbar = () => {
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  <a href="/learning/navigating-programatically">
-                    Programatic Nav
-                  </a>
+                  <Link href="/learning/navigating-programatically">
+                    <a>Programmatic Nav</a>
+                  </Link>
                 </MenuItem>
               </MenuGroup>
             </Box>

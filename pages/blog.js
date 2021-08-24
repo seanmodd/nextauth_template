@@ -22,15 +22,15 @@ function Blog({ data }) {
 
   if (loading) {
     return (
-      <VStack pt="100px">
+      <VStack pt="50px">
         <Heading className="title">Loading...</Heading>
       </VStack>
     );
   }
 
   return (
-    <VStack pt="100px">
-      <Heading className="title" py="20px">
+    <VStack pt="50px">
+      <Heading className="title" pb="20px">
         Blog Page!
       </Heading>
       <Heading fontSize="2xl">{data}</Heading>
