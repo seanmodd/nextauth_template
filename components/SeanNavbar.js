@@ -15,6 +15,7 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 import Link from 'next/link';
 import { MyButton } from '../styles/theme';
 import Star from './Star';
+import DarkModeSwitch from './DarkModeSwitch';
 
 const SeanNavbar = () => {
   const [session, loading] = useSession();
@@ -70,15 +71,16 @@ const SeanNavbar = () => {
               <MenuGroup color={textColor[colorMode]} title="Profile">
                 <MenuItem
                   color={textColor[colorMode]}
+                  // transition= 'all 0.5s ease-in-out'
                   bg={bgColorItem[colorMode]}
                   _focus={{
-                    bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
-                    color: colorMode === 'dark' ? 'white' : '#d400ff',
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#d400ff' : '#d400ff',
                     transition: 'all 0.5s ease-in-out',
                   }}
                   _hover={{
-                    bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
-                    color: colorMode === 'dark' ? 'white' : '#d400ff',
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#0077ff' : '#0077ff',
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
@@ -88,54 +90,57 @@ const SeanNavbar = () => {
                 </MenuItem>
                 <MenuItem
                   color={textColor[colorMode]}
+                  // transition= 'all 0.5s ease-in-out'
                   bg={bgColorItem[colorMode]}
                   _focus={{
-                    bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
-                    color: colorMode === 'dark' ? 'white' : '#d400ff',
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#d400ff' : '#d400ff',
                     transition: 'all 0.5s ease-in-out',
                   }}
                   _hover={{
-                    bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
-                    color: colorMode === 'dark' ? 'white' : '#d400ff',
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#0077ff' : '#0077ff',
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  Payments{' '}
+                  <a>Payments</a>
                 </MenuItem>
               </MenuGroup>
               <MenuDivider />
               <MenuGroup color={textColor[colorMode]} title="Help">
                 <MenuItem
                   color={textColor[colorMode]}
+                  // transition= 'all 0.5s ease-in-out'
                   bg={bgColorItem[colorMode]}
                   _focus={{
-                    bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
-                    color: colorMode === 'dark' ? 'white' : '#d400ff',
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#d400ff' : '#d400ff',
                     transition: 'all 0.5s ease-in-out',
                   }}
                   _hover={{
-                    bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
-                    color: colorMode === 'dark' ? 'white' : '#d400ff',
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#0077ff' : '#0077ff',
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  Docs
+                  <a>Docs</a>
                 </MenuItem>
                 <MenuItem
                   color={textColor[colorMode]}
+                  // transition= 'all 0.5s ease-in-out'
                   bg={bgColorItem[colorMode]}
                   _focus={{
-                    bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
-                    color: colorMode === 'dark' ? 'white' : '#d400ff',
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#d400ff' : '#d400ff',
                     transition: 'all 0.5s ease-in-out',
                   }}
                   _hover={{
-                    bg: colorMode === 'dark' ? '#d400ff' : 'gray.900',
-                    color: colorMode === 'dark' ? 'white' : '#d400ff',
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#0077ff' : '#0077ff',
                     transition: 'all 0.5s ease-in-out',
                   }}
                 >
-                  FAQ
+                  <a>FAQ</a>
                 </MenuItem>
               </MenuGroup>
             </Box>
@@ -149,10 +154,12 @@ const SeanNavbar = () => {
 export default SeanNavbar;
 
 export const MyTitle = ({ children }) => (
-  <Box py="20px">
+  <HStack py="20px" mt="5px" mb="20px" align="center" justify="center">
+    <DarkModeSwitch />
     <h1 className="logos">
       {/* <a href="#">NextAuth</a> */}
       NextAuth
     </h1>
-  </Box>
+    <SeanNavbar />
+  </HStack>
 );

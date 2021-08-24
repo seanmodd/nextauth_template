@@ -15,26 +15,23 @@ function Navbar() {
       {/* <nav className="header"> */}
 
       <nav className="main-nav">
-        <SimpleGrid px="200px" minChildWidth="120px" spacing="40px">
-          <Box>
-            <DarkModeSwitch />
-          </Box>
-          <Box h="5px">
+        <SimpleGrid px="600px" pb="10px" minChildWidth="40px" spacing="20px">
+          <Box h="45px">
             <Link href="/">
               <a>Home</a>
             </Link>
           </Box>
-          <Box h="5px">
+          <Box h="45px">
             <Link href="/dashboard">
               <a>Dashboard</a>
             </Link>
           </Box>
-          <Box h="5px">
+          <Box h="45px">
             <Link href="/blog">
               <a>Blog</a>
             </Link>
           </Box>
-          <Box h="5px">
+          <Box h="45px">
             {!loading && !session && (
               <Link href="/api/auth/signin">
                 <a
@@ -60,8 +57,6 @@ function Navbar() {
               </Link>
             )}
           </Box>
-
-          <SeanNavbar />
         </SimpleGrid>
         <LearningNavbar />
       </nav>

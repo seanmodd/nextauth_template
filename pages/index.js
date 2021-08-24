@@ -1,7 +1,8 @@
+import { Button } from '@geist-ui/react';
 import PageContainer from 'components/PageContainer';
 import Form from 'components/Form';
 import { useSession } from 'next-auth/client';
-import { Button, Heading, VStack, useDisclosure, Text } from '@chakra-ui/react';
+import { Heading, VStack, useDisclosure, Text } from '@chakra-ui/react';
 import React from 'react';
 
 export default function Home() {

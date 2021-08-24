@@ -42,7 +42,7 @@ function LearningNavbar(props) {
 
   return (
     <>
-      <SimpleGrid px="400px" minChildWidth="120px" spacing="40px">
+      <SimpleGrid px="400px" minChildWidth="40px" spacing="10px" pb="50px">
         <Box h="5px">
           <Link href="/learning/">
             <a
@@ -79,7 +79,7 @@ function LearningNavbar(props) {
         </Box>
         <Box h="5px">
           <Link href="/learning/navigating-programatically">
-            <a onClick={() => setClicked(false)}>Navigating Programatically</a>
+            <a onClick={() => setClicked(false)}>Programatic Nav</a>
           </Link>
         </Box>
       </SimpleGrid>

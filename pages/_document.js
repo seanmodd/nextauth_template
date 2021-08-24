@@ -1,10 +1,23 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 import { ColorModeScript } from '@chakra-ui/react';
+import { CssBaseline } from '@geist-ui/react';
 
 export default class MyDocument extends NextDocument {
   static async getInitialProps(ctx) {
     const initialProps = await NextDocument.getInitialProps(ctx);
-    return { ...initialProps };
+    //   return { ...initialProps };
+    // }
+    const styles = CssBaseline.flush();
+
+    return {
+      ...initialProps,
+      styles: (
+        <>
+          {initialProps.styles}
+          {styles}
+        </>
+      ),
+    };
   }
 
   render() {

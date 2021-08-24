@@ -1,23 +1,3 @@
-// import { theme as defaultTheme, extendTheme, Button } from '@chakra-ui/react';
-// import { createBreakpoints } from '@chakra-ui/theme-tools';
-
-// const breakpoints = createBreakpoints({
-//   sm: '425px',
-//   md: '768px',
-//   lg: '960px',
-//   xl: '1280px',
-//   '2xl': '1440px',
-// });
-
-// const theme = extendTheme({
-//   fonts: {
-//     heading: `'Inter', ${defaultTheme.fonts.heading}`,
-//     body: `'Inter', ${defaultTheme.fonts.body}`,
-//   },
-//   breakpoints,
-// });
-
-// export default theme;
 import { mode } from '@chakra-ui/theme-tools';
 import {
   extendTheme,
@@ -25,7 +5,6 @@ import {
   Box,
   useStyleConfig,
 } from '@chakra-ui/react';
-// import 'typeface-poppins';
 import '@fontsource/inter';
 import '@fontsource/poppins';
 
@@ -78,22 +57,22 @@ export const theme = extendTheme({
           transition: 'all 0.1s ease-in-out',
         },
       },
-      div: {
-        backgroundColor: props.colorMode === 'dark' ? 'gray.900' : 'gray.100',
-        transition: 'all 0.1s ease-in-out',
-      },
+      // div: {
+      //   backgroundColor: props.colorMode === 'dark' ? 'gray.900' : 'gray.100',
+      //   transition: 'all 0.1s ease-in-out',
+      // },
       a: {
-        color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
-        fontWeight: '200',
-        transition: 'all 0.5s ease-in-out',
+        // color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
+        fontWeight: '700',
+        transition: 'all 0.1s ease-in-out',
         textTransform: 'uppercase',
         textAlign: 'center',
-        color: props.colorMode === 'dark' ? 'blue.400' : '#ff00ea',
+        color: props.colorMode === 'dark' ? 'gray.50' : '#ff00ea',
         textDecoration: 'underline',
         _hover: {
           textShadow: '-1px 1px 5px #30303029',
-          color: props.colorMode === 'dark' ? '#ff00ea' : 'blue.400',
-          transition: 'all 0.5s ease-in-out',
+          color: props.colorMode === 'dark' ? '#0077ff' : '#0077ff',
+          transition: 'all 0.1s ease-in-out',
         },
       },
       button: {
@@ -260,3 +239,45 @@ export const theme = extendTheme({
     },
   },
 });
+
+// ! BELOW IS MY THEME FROM GEIST UI!!!!
+export const myTheme = {
+  type: 'Custom',
+  palette: {
+    accents_1: '#111',
+    accents_2: '#333',
+    accents_3: '#444',
+    accents_4: '#666',
+    accents_5: '#888',
+    accents_6: '#999',
+    accents_7: '#eaeaea',
+    accents_8: '#fafafa',
+    background: '#000',
+    foreground: '#fff',
+    selection: '#f81ce5',
+    secondary: '#888',
+    code: '#79ffe1',
+    border: '#333',
+    link: '#3291ff',
+  },
+  expressiveness: {
+    dropdownBoxShadow: '0 0 0 1px #333',
+    shadowSmall: '0 0 0 1px #333',
+    shadowMedium: '0 0 0 1px #333',
+    shadowLarge: '0 0 0 1px #333',
+    portalOpacity: 0.75,
+  },
+};
+
+/** *
+ *  Usage::
+ *
+ *  export const App = () => {
+ *    return (
+ *      <GeistProvider themes={[myTheme]} themeType="Custom">
+ *        <CssBaseline />
+ *        <YourComponent />
+ *      </GeistProvider>
+ *    )
+ *  }
+ * */
