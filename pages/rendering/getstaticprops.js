@@ -5,7 +5,7 @@ import faker from 'faker';
 function App() {
   return (
     <VStack pt="50px">
-      <Heading>Nested Dynamic</Heading>
+      <Heading>getStaticProps</Heading>
       <h1
         style={{
           fontSize: '40px',

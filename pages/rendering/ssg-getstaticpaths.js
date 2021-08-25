@@ -5,8 +5,7 @@ import faker from 'faker';
 function App() {
   return (
     <VStack pt="50px">
-      <Heading>Product List Routes</Heading>
-
+      <Heading>SSG with getStaticPaths</Heading>
       <h1
         style={{
           fontSize: '40px',

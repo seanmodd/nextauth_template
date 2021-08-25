@@ -5,7 +5,8 @@ import faker from 'faker';
 function App() {
   return (
     <VStack pt="50px">
-      <Heading>Catch-All Routes</Heading>
+      <Heading>Rendering</Heading>
+      <ChangingColor />
       <h1
         style={{
           fontSize: '40px',

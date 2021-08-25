@@ -191,6 +191,66 @@ const SeanNavbar = () => {
                   </Link>
                 </MenuItem>
               </MenuGroup>
+              <MenuDivider />
+              <MenuGroup color={textColor[colorMode]} title="Routes">
+                <MenuItem
+                  color={textColor[colorMode]}
+                  // transition= 'all 0.5s ease-in-out'
+                  bg={bgColorItem[colorMode]}
+                  _focus={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#d400ff' : '#d400ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                  _hover={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#0077ff' : '#0077ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                >
+                  <Link href="/rendering/getstaticprops">
+                    <a>getStaticProps</a>
+                  </Link>
+                </MenuItem>
+                <MenuItem
+                  color={textColor[colorMode]}
+                  // transition= 'all 0.5s ease-in-out'
+                  bg={bgColorItem[colorMode]}
+                  _focus={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#d400ff' : '#d400ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                  _hover={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#0077ff' : '#0077ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                >
+                  <Link href="/rendering/ssg-dynamic-params">
+                    <a>SSG Dynamic Params</a>
+                  </Link>
+                </MenuItem>
+                <MenuItem
+                  color={textColor[colorMode]}
+                  // transition= 'all 0.5s ease-in-out'
+                  bg={bgColorItem[colorMode]}
+                  _focus={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#d400ff' : '#d400ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                  _hover={{
+                    bg: colorMode === 'dark' ? 'gray.900' : 'gray.900',
+                    color: colorMode === 'dark' ? '#0077ff' : '#0077ff',
+                    transition: 'all 0.5s ease-in-out',
+                  }}
+                >
+                  <Link href="/rendering/ssg-getstaticpaths">
+                    <a>SSG getStaticPaths</a>
+                  </Link>
+                </MenuItem>
+              </MenuGroup>
             </Box>
           </MenuList>
         </Menu>
